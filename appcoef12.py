@@ -57,7 +57,7 @@ if uploaded_file is not None:
             for idx, col in enumerate(feature_columns):
                 coeffs[col].append(params[idx])  # Paramètres ajustés
             r_squared.append(rsquared)
-            predictions.append(y_pred.iloc[-1])  # Stocker la dernière prédiction pour comparaison
+            predictions.append(y_pred[-1])  # Stocker la dernière prédiction pour comparaison
             actual_values.append(y.iloc[-1])  # Stocker la dernière valeur réelle
 
         # Convertir les listes en DataFrame
