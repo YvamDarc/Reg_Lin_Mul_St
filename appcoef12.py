@@ -36,8 +36,9 @@ if uploaded_file is not None:
 
         # Fonction pour ajuster le modèle de régression linéaire sans intercept
         def ajuster_modele(X, y):
-            model = sm.OLS(y, X).fit()  # Régression sans intercept
-            return model.params, model.rsquared, model.predict(X)
+            X_with_intercept = X
+            model = sm.OLS(y, X_with_intercept).fit()  # Régression sans intercept
+            return model.params, model.rsquared, model.predict(X_with_intercept)
 
         # Initialiser des listes pour stocker les coefficients, R-squared, dates, prédictions et valeurs réelles
         dates = []
